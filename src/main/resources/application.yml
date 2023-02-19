@@ -1,0 +1,21 @@
+server:
+  port: 3009
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/auth?useSSL=false
+    username: root
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+    hibernate:
+      ddl-auto: update
+
+jwt:
+  secret: 12345
+
+logging:
+  level:
+    com:
+      saptarshi: Trace
