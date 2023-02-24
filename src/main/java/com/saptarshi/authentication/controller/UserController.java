@@ -30,18 +30,18 @@ public class UserController {
 
     @PostMapping("/update_password")
     public ResponseEntity<String> updatePassword(@RequestBody UpdatePasswordRequest updatePasswordRequest,
-                                         @RequestHeader("authorization") String token){
+                                         @RequestHeader("Authorization") String token){
         return new ResponseEntity<>(userService.updatePassword(updatePasswordRequest,token.substring(7)),
                 HttpStatus.OK);
     }
     @PostMapping("/logout")
-    public ResponseEntity<String > logout(@RequestHeader("authorization") String token,
+    public ResponseEntity<String > logout(@RequestHeader("Authorization") String token,
                                           @RequestParam("user_email") String userEmail){
         return new ResponseEntity<>(userService.logout(token.substring(7),userEmail),HttpStatus.OK);
     }
 
     @GetMapping("/get_new_token")
-    public ResponseEntity<RefreshTokenResponse> getNewAccessToken(@RequestHeader("authorization") String token,
+    public ResponseEntity<RefreshTokenResponse> getNewAccessToken(@RequestHeader("Authorization") String token,
                                                                   @RequestParam("user_email") String userEmail){
         return new ResponseEntity<>(userService.getNewAccessToken(token.substring(7),userEmail), HttpStatus.OK);
     }

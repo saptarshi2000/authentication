@@ -56,7 +56,7 @@ public class User_ {
     @JsonFormat( pattern = "dd-MM-yyyy")
     private LocalDate createdOn;
 
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.EAGER)
     @JoinTable(
         name = "user_role",
         joinColumns = {

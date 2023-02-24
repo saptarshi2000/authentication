@@ -2,7 +2,6 @@ package com.saptarshi.authentication.util;
 
 import com.saptarshi.authentication.model.Role;
 import com.saptarshi.authentication.model.User_;
-import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
